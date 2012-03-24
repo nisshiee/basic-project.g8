@@ -1,18 +1,15 @@
-package $organization$.$name$
+import org.specs2._
+class AppSpec extends Specification { def is =
 
-import org.specs2.mutable._
+    "文字列'Hello world'に関するテスト"                                         ^
+                                                                                p^
+    "文字列'Hello world'は"                                                     ^
+      "長さが11であること"                                                      ! e1^
+      "'Hello'で始まること"                                                     ! e2^
+      "'world'で終わること"                                                     ! e3^
+                                                                                end
 
-class AppSpec extends Specification {
-
-  "The 'Hello world' string" should {
-    "contain 11 characters" in {
-      "Hello world" must have size(11)
-    }
-    "start with 'Hello'" in {
-      "Hello world" must startWith("Hello")
-    }
-    "end with 'world'" in {
-      "Hello world" must endWith("world")
-    }
-  }
+    def e1 = "Hello world" must have size(11)
+    def e2 = "Hello world" must startWith("Hello")
+    def e3 = "Hello world" must endWith("world")
 }

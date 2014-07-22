@@ -8,42 +8,42 @@ organization := "$organization$"
 
 version := "$version$"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.4"
 
 libraryDependencies ++= Seq(
   // ---------- basic ----------
-   "org.scalaz" %% "scalaz-core" % "7.0.4"
+   "org.scalaz" %% "scalaz-core" % "7.0.6"
   ,"org.typelevel" %% "scalaz-contrib-210" % "0.1.5"
-  ,"com.typesafe.akka" %% "akka-actor" % "2.2.1"
-  ,"com.github.nscala-time" %% "nscala-time" % "0.6.0"
+  ,"com.typesafe.akka" %% "akka-actor" % "2.3.4"
+  ,"com.github.nscala-time" %% "nscala-time" % "1.2.0"
   // ---------- for FILE IO ----------
-  ,"com.github.scala-incubator.io" %% "scala-io-core" % "0.4.2"
-  ,"com.github.scala-incubator.io" %% "scala-io-file" % "0.4.2"
-  ,"com.github.tototoshi" %% "scala-csv" % "0.8.0"
+  ,"com.github.scala-incubator.io" %% "scala-io-core" % "0.4.3"
+  ,"com.github.scala-incubator.io" %% "scala-io-file" % "0.4.3"
+  ,"com.github.tototoshi" %% "scala-csv" % "1.0.0"
   // ---------- for WEB ----------
-  ,"net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
-  ,"org.json4s" %% "json4s-jackson" % "3.2.5"
+  ,"net.databinder.dispatch" %% "dispatch-core" % "0.11.1"
+  ,"org.json4s" %% "json4s-jackson" % "3.2.10"
   // ---------- for CLI ----------
-  ,"com.typesafe" % "config" % "1.0.2"
-  ,"com.github.kxbmap" %% "configs" % "0.2.0"
-  ,"com.github.scopt" %% "scopt" % "3.1.0"
+  ,"com.typesafe" % "config" % "1.2.1"
+  ,"com.github.kxbmap" %% "configs" % "0.2.2"
+  ,"com.github.scopt" %% "scopt" % "3.2.0"
   // ---------- for DB ----------
-  ,"com.github.seratch" %% "scalikejdbc" % "1.6.10"
-  ,"com.github.seratch" %% "scalikejdbc-interpolation" % "1.6.10"
-  ,"com.github.seratch" %% "scalikejdbc-config" % "1.6.10"
-  ,"mysql" % "mysql-connector-java" % "5.1.26"
+  ,"org.scalikejdbc" %% "scalikejdbc" % "2.0.5"
+  ,"org.scalikejdbc" %% "scalikejdbc-interpolation" % "2.0.5"
+  ,"org.scalikejdbc" %% "scalikejdbc-config" % "2.0.5"
+  ,"mysql" % "mysql-connector-java" % "5.1.31"
   // ---------- for Logging ----------
-  ,"org.slf4j" % "slf4j-api" % "1.7.5"
-  ,"org.slf4j" % "slf4j-simple" % "1.7.5"
+  ,"org.slf4j" % "slf4j-api" % "1.7.7"
+  ,"org.slf4j" % "slf4j-simple" % "1.7.7"
   // ---------- test scope ----------
-  ,"org.specs2" %% "specs2" % "2.2.3" % "test"
-  ,"org.typelevel" %% "scalaz-specs2" % "0.1.5" % "test"
+  ,"org.specs2" %% "specs2" % "2.3.13" % "test"
+  ,"org.typelevel" %% "scalaz-specs2" % "0.2" % "test"
   ,"junit" % "junit" % "4.11" % "test"
-  ,"org.pegdown" % "pegdown" % "1.4.1" % "test"
+  ,"org.pegdown" % "pegdown" % "1.4.2" % "test"
 )
 
 scalacOptions <++= scalaVersion.map { sv =>
-  if (sv.startsWith("2.10")) {
+  if (sv.startsWith("2.1")) {
     Seq(
       "-deprecation",
       "-language:dynamics",

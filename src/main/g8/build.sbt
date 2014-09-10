@@ -11,6 +11,7 @@ val specs2V = "2.4.2"
 lazy val root = (project in file("."))
   .settings(assemblySettings: _*)
   .settings(net.virtualvoid.sbt.graph.Plugin.graphSettings: _*)
+  .settings(scalariformSettings: _*)
   .settings(
      name := "$name$"
     ,organization := "$organization$"

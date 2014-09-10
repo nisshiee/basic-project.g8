@@ -1,6 +1,7 @@
 import org.specs2._
 
-class AppSpec extends Specification { def is = s2"""
+class AppSpec extends Specification {
+  def is = s2"""
 
 test about String 'Hello world'
 
@@ -10,7 +11,7 @@ test about String 'Hello world'
   ends with 'world'                                                             \$e3
                                                                                 """
 
-    def e1 = "Hello world" must have size(11)
-    def e2 = "Hello world" must startWith("Hello")
-    def e3 = "Hello world" must endWith("world")
+  def e1 = "Hello world" must have size (11)
+  def e2 = "Hello world" must startWith("Hello")
+  def e3 = "Hello world" must endWith("world")
 }

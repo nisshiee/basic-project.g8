@@ -1,4 +1,6 @@
 import AssemblyKeys._
+import scalariform.formatter.preferences._
+import ScalariformKeys._
 
 val scalaV = "2.11.2"
 val scalazV = "7.1.0"
@@ -45,6 +47,7 @@ lazy val root = (project in file("."))
       // ---------- test scope ----------
       ,"org.specs2" %% "specs2" % specs2V % "test"
       ,"org.typelevel" %% "scalaz-specs2" % "0.3.0" % "test"
+      ,"org.scalikejdbc" %% "scalikejdbc-test" % scalikejdbcV % "test"
       ,"junit" % "junit" % "4.11" % "test"
       ,"org.pegdown" % "pegdown" % "1.4.2" % "test"
     )
@@ -74,6 +77,12 @@ lazy val root = (project in file("."))
         |import com.github.nscala_time.time.Imports._
       """.stripMargin
     ,cleanupCommands := ""
+    // ========== for scalariform ==========
+    ,ScalariformKeys.preferences := ScalariformKeys.preferences.value
+      .setPreference(AlignSingleLineCaseStatements, true)
+      .setPreference(CompactControlReadability, true)
+      .setPreference(DoubleIndentClassDeclaration, true)
+      .setPreference(PreserveDanglingCloseParenthesis, true)
     // ========== for sonatype oss publish ==========
     ,publishMavenStyle := true
     ,publishTo := {

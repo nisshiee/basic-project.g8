@@ -5,13 +5,13 @@ import scalikejdbc.specs2.AutoRollback
 class HogeRepositorySpec extends Specification {
   def is = s2"""
 
-if you want test repository classes, use this template                          ${todo}
+if you want test repository classes, use this template                          \${todo}
                                                                                 """
 }
 //class HogeRepositorySpec extends Specification with DBSettings {
 //  def is = s2"""
 // 
-//all                                                                             ${Db().e1}
+//all                                                                             \${Db().e1}
 //                                                                                """
 // 
 //  case class Db() extends AutoRollback {
